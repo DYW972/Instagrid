@@ -12,6 +12,8 @@
 		8CACA13823931A84002A4FB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CACA13623931A84002A4FB5 /* Main.storyboard */; };
 		8CACA13A23931A85002A4FB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CACA13923931A85002A4FB5 /* Assets.xcassets */; };
 		8CACA13D23931A85002A4FB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CACA13B23931A85002A4FB5 /* LaunchScreen.storyboard */; };
+		8CACA14923931D4B002A4FB5 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CACA14823931D4B002A4FB5 /* Delm-Medium.otf */; };
+		8CACA14B23931D5C002A4FB5 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8CACA14A23931D5C002A4FB5 /* ThirstySoftRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		8CACA13923931A85002A4FB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CACA13C23931A85002A4FB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CACA13E23931A85002A4FB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CACA14823931D4B002A4FB5 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../Supporting_Files/Delm-Medium.otf"; sourceTree = "<group>"; };
+		8CACA14A23931D5C002A4FB5 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = ../../../Supporting_Files/ThirstySoftRegular.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 			children = (
 				8CACA13223931A84002A4FB5 /* AppDelegate.swift */,
 				8CACA13E23931A85002A4FB5 /* Info.plist */,
+				8CACA14823931D4B002A4FB5 /* Delm-Medium.otf */,
+				8CACA14A23931D5C002A4FB5 /* ThirstySoftRegular.otf */,
 				8CACA13923931A85002A4FB5 /* Assets.xcassets */,
 			);
 			path = Utils;
@@ -156,6 +162,8 @@
 			files = (
 				8CACA13D23931A85002A4FB5 /* LaunchScreen.storyboard in Resources */,
 				8CACA13A23931A85002A4FB5 /* Assets.xcassets in Resources */,
+				8CACA14B23931D5C002A4FB5 /* ThirstySoftRegular.otf in Resources */,
+				8CACA14923931D4B002A4FB5 /* Delm-Medium.otf in Resources */,
 				8CACA13823931A84002A4FB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
