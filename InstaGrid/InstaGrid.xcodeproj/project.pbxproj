@@ -54,14 +54,46 @@
 		8CACA13123931A84002A4FB5 /* InstaGrid */ = {
 			isa = PBXGroup;
 			children = (
-				8CACA13223931A84002A4FB5 /* AppDelegate.swift */,
-				8CACA13423931A84002A4FB5 /* ViewController.swift */,
-				8CACA13623931A84002A4FB5 /* Main.storyboard */,
-				8CACA13923931A85002A4FB5 /* Assets.xcassets */,
-				8CACA13B23931A85002A4FB5 /* LaunchScreen.storyboard */,
-				8CACA13E23931A85002A4FB5 /* Info.plist */,
+				8CACA14723931C6F002A4FB5 /* Utils */,
+				8CACA14423931C3B002A4FB5 /* Model */,
+				8CACA14523931C4A002A4FB5 /* View */,
+				8CACA14623931C5B002A4FB5 /* Controller */,
 			);
 			path = InstaGrid;
+			sourceTree = "<group>";
+		};
+		8CACA14423931C3B002A4FB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CACA14523931C4A002A4FB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8CACA13B23931A85002A4FB5 /* LaunchScreen.storyboard */,
+				8CACA13623931A84002A4FB5 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8CACA14623931C5B002A4FB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8CACA13423931A84002A4FB5 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8CACA14723931C6F002A4FB5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8CACA13223931A84002A4FB5 /* AppDelegate.swift */,
+				8CACA13E23931A85002A4FB5 /* Info.plist */,
+				8CACA13923931A85002A4FB5 /* Assets.xcassets */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
