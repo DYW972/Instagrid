@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,18 +15,18 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="egL-1q-PTR">
-                                <rect key="frame" x="107" y="346" width="200" height="204"/>
+                                <rect key="frame" x="60" y="182" width="200" height="204"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="egL-1q-PTR" secondAttribute="height" multiplier="93:95" id="RdD-rr-2li"/>
                                     <constraint firstAttribute="width" constant="200" id="YJM-qd-4cJ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.72185713052749634" green="0.83869963884353638" blue="0.89323443174362183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="egL-1q-PTR" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ess-yv-Das"/>
                             <constraint firstItem="egL-1q-PTR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QR3-oj-qOs"/>
