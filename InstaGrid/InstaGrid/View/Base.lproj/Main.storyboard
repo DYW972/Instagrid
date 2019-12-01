@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_5" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -9,17 +9,22 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Delm-Medium.otf">
+            <string>Delm-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstaGrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2IG-yD-Lxq">
-                                <rect key="frame" x="63" y="304" width="288" height="288"/>
+                                <rect key="frame" x="16" y="96" width="288" height="288"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="HTA-lW-Wbm"/>
@@ -27,7 +32,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ime-cM-3ob">
-                                <rect key="frame" x="63" y="772" width="288" height="80"/>
+                                <rect key="frame" x="16" y="390" width="288" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="F66-yJ-l7g">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -52,9 +57,22 @@
                                     <constraint firstItem="14s-2k-WK1" firstAttribute="height" secondItem="F66-yJ-l7g" secondAttribute="height" id="tnY-tC-Z4Q"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPk-kt-CpL">
+                                <rect key="frame" x="16" y="58" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="TzN-Vf-Ofb"/>
+                                    <constraint firstAttribute="height" constant="30" id="UiO-vC-DrX"/>
+                                    <constraint firstAttribute="width" secondItem="OPk-kt-CpL" secondAttribute="height" multiplier="48:5" id="XGZ-0I-LAS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.7218571305" green="0.83869963879999998" blue="0.89323443170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2IG-yD-Lxq" firstAttribute="top" secondItem="OPk-kt-CpL" secondAttribute="bottom" constant="8" id="C2k-Et-3ko"/>
+                            <constraint firstItem="OPk-kt-CpL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CUg-v7-lac"/>
                             <constraint firstItem="Ime-cM-3ob" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F6v-uR-HMC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ime-cM-3ob" secondAttribute="bottom" constant="10" id="MrH-Ey-KDO"/>
                             <constraint firstItem="2IG-yD-Lxq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wqb-Jd-KmS"/>
@@ -65,12 +83,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="123.75" y="108.75"/>
+            <point key="canvasLocation" x="123.18840579710145" y="108.48214285714285"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Layout 1" width="26.666666030883789" height="26.666666030883789"/>
-        <image name="Layout 2" width="26.666666030883789" height="26.666666030883789"/>
-        <image name="Layout 3" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="Layout 1" width="27" height="27"/>
+        <image name="Layout 2" width="27" height="27"/>
+        <image name="Layout 3" width="27" height="27"/>
     </resources>
 </document>
