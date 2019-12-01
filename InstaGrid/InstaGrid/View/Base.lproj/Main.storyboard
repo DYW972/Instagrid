@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina3_5" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,11 +20,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstaGrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2IG-yD-Lxq">
-                                <rect key="frame" x="16" y="96" width="288" height="288"/>
+                                <rect key="frame" x="63" y="304" width="288" height="288"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="HTA-lW-Wbm"/>
@@ -32,7 +32,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ime-cM-3ob">
-                                <rect key="frame" x="16" y="390" width="288" height="80"/>
+                                <rect key="frame" x="63" y="772" width="288" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="F66-yJ-l7g">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -58,7 +58,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPk-kt-CpL">
-                                <rect key="frame" x="16" y="58" width="288" height="30"/>
+                                <rect key="frame" x="63" y="266" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="TzN-Vf-Ofb"/>
                                     <constraint firstAttribute="height" constant="30" id="UiO-vC-DrX"/>
@@ -68,6 +68,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="QAr-UE-fy4">
+                                <rect key="frame" x="197" y="238" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Evy-P3-meK"/>
+                                    <constraint firstAttribute="width" secondItem="QAr-UE-fy4" secondAttribute="height" multiplier="1:1" id="Sr3-eH-zjm"/>
+                                    <constraint firstAttribute="height" constant="20" id="boC-QK-ddW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.7218571305" green="0.83869963879999998" blue="0.89323443170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -77,6 +85,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ime-cM-3ob" secondAttribute="bottom" constant="10" id="MrH-Ey-KDO"/>
                             <constraint firstItem="2IG-yD-Lxq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wqb-Jd-KmS"/>
                             <constraint firstItem="2IG-yD-Lxq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ap2-xU-XCG"/>
+                            <constraint firstItem="QAr-UE-fy4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bcU-h7-OYL"/>
+                            <constraint firstItem="OPk-kt-CpL" firstAttribute="top" secondItem="QAr-UE-fy4" secondAttribute="bottom" constant="8" id="c4c-HO-DWz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -87,8 +97,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Layout 1" width="27" height="27"/>
-        <image name="Layout 2" width="27" height="27"/>
-        <image name="Layout 3" width="27" height="27"/>
+        <image name="Arrow Up" width="4.6666665077209473" height="3.3333332538604736"/>
+        <image name="Layout 1" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="Layout 2" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="Layout 3" width="26.666666030883789" height="26.666666030883789"/>
     </resources>
 </document>
