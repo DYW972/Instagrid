@@ -21,21 +21,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="vSe-qh-bBP">
                                 <rect key="frame" x="63" y="745" width="288" height="80"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="Usr-Yj-okc">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="Layout 1" translatesAutoresizingMaskIntoConstraints="NO" id="Usr-Yj-okc">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="04h-WW-6Yd"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="htp-Sd-qhH"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Layout 2" translatesAutoresizingMaskIntoConstraints="NO" id="awN-wR-zwX">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="Layout 2" translatesAutoresizingMaskIntoConstraints="NO" id="awN-wR-zwX">
                                         <rect key="frame" x="104" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="fY3-hA-kiy"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="ro4-gq-vGM"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Layout 3" translatesAutoresizingMaskIntoConstraints="NO" id="C6e-eX-sjh">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" ambiguous="YES" image="Layout 3" translatesAutoresizingMaskIntoConstraints="NO" id="C6e-eX-sjh">
                                         <rect key="frame" x="208" y="0.0" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="at8-M8-HNT"/>
@@ -44,17 +44,63 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="7W9-H0-HQf"/>
                                     <constraint firstAttribute="width" secondItem="vSe-qh-bBP" secondAttribute="height" multiplier="18:5" id="DGG-10-7TA"/>
+                                    <constraint firstAttribute="width" secondItem="vSe-qh-bBP" secondAttribute="height" multiplier="18:5" id="Unu-2K-5uU"/>
+                                    <constraint firstAttribute="width" secondItem="vSe-qh-bBP" secondAttribute="height" multiplier="2:7" id="WzO-X8-wjy"/>
+                                    <constraint firstAttribute="width" secondItem="vSe-qh-bBP" secondAttribute="height" multiplier="1037:288" id="XT1-AT-xgA"/>
                                     <constraint firstAttribute="width" constant="288" id="opE-K2-xLd"/>
+                                    <constraint firstAttribute="width" constant="80" id="zct-gl-hm5"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7W9-H0-HQf"/>
+                                        <exclude reference="Unu-2K-5uU"/>
+                                        <exclude reference="WzO-X8-wjy"/>
+                                        <exclude reference="XT1-AT-xgA"/>
+                                        <exclude reference="zct-gl-hm5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" axis="vertical" spacing="20">
+                                    <mask key="constraints">
+                                        <include reference="7W9-H0-HQf"/>
+                                        <exclude reference="DGG-10-7TA"/>
+                                        <include reference="WzO-X8-wjy"/>
+                                        <exclude reference="XT1-AT-xgA"/>
+                                        <exclude reference="opE-K2-xLd"/>
+                                        <include reference="zct-gl-hm5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="DGG-10-7TA"/>
+                                        <include reference="Unu-2K-5uU"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.7218571305" green="0.83869963879999998" blue="0.89323443170000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vSe-qh-bBP" secondAttribute="bottom" constant="37" id="2cp-44-mxH"/>
+                            <constraint firstItem="vSe-qh-bBP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CNQ-jG-3t9"/>
                             <constraint firstItem="vSe-qh-bBP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nX3-Es-cJX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vSe-qh-bBP" secondAttribute="trailing" constant="37" id="rs4-ST-79V"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="rs4-ST-79V"/>
+                                <exclude reference="CNQ-jG-3t9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="2cp-44-mxH"/>
+                                <include reference="rs4-ST-79V"/>
+                                <include reference="CNQ-jG-3t9"/>
+                                <exclude reference="nX3-Es-cJX"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
