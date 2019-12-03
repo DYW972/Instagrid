@@ -190,7 +190,7 @@
                                         <rect key="frame" x="8" y="8" width="113" height="111"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="113" id="5e2-6C-dnM"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="5e2-6C-dnM"/>
                                             <constraint firstAttribute="width" secondItem="QOl-Yx-BSX" secondAttribute="height" multiplier="113:111" id="ngi-Un-ZOu"/>
                                         </constraints>
                                     </imageView>
@@ -356,9 +356,12 @@
                             <constraint firstItem="Gd4-L6-u3W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="TVq-hP-RcA">
                                 <variation key="heightClass=compact-widthClass=regular" constant="70"/>
                             </constraint>
+                            <constraint firstItem="d09-NZ-Wb3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="Un0-W4-BSg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d09-NZ-Wb3" secondAttribute="trailing" constant="35" id="WQU-EA-w2e"/>
                             <constraint firstItem="Kdc-Ln-CSO" firstAttribute="top" secondItem="Vsg-PW-YzN" secondAttribute="bottom" constant="8" id="Yxh-2s-VIe"/>
                             <constraint firstItem="QO4-ub-fgr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="ZZ4-IC-bd8"/>
                             <constraint firstItem="aB4-Oc-ULF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cLy-ja-aIR"/>
+                            <constraint firstItem="d09-NZ-Wb3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ccC-Dx-OK7"/>
                             <constraint firstItem="z7n-it-d8f" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cmd-e5-o3D"/>
                             <constraint firstItem="Gd4-L6-u3W" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="d8t-4v-BN8"/>
                             <constraint firstItem="Vsg-PW-YzN" firstAttribute="centerX" secondItem="Kdc-Ln-CSO" secondAttribute="centerX" id="dAr-lY-hNi"/>
@@ -371,6 +374,7 @@
                             <constraint firstItem="d09-NZ-Wb3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="mY0-qO-DYJ"/>
                             <constraint firstItem="Vsg-PW-YzN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qJT-Lc-AaB"/>
                             <constraint firstItem="Kdc-Ln-CSO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qPe-el-IVz"/>
+                            <constraint firstItem="d09-NZ-Wb3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rb2-v2-D5M"/>
                             <constraint firstItem="tzM-R0-U9c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="u5N-tr-o0X"/>
                             <constraint firstItem="d09-NZ-Wb3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uZw-WY-5uV"/>
                             <constraint firstItem="aB4-Oc-ULF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ud6-a2-Vg1"/>
