@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8C731CE023932EB000585EF6 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C731CDF23932EB000585EF6 /* Delm-Medium.otf */; };
 		8C731CE223932EBA00585EF6 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8C731CE123932EBA00585EF6 /* ThirstySoftRegular.otf */; };
+		8C7F5FC92396E5B30012E02E /* GridSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F5FC82396E5B30012E02E /* GridSystem.swift */; };
+		8C7F5FCB2396E84E0012E02E /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F5FCA2396E84E0012E02E /* Grid.swift */; };
+		8C7F5FCD2396E9500012E02E /* Pictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F5FCC2396E9500012E02E /* Pictures.swift */; };
 		8CACA13323931A84002A4FB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CACA13223931A84002A4FB5 /* AppDelegate.swift */; };
 		8CACA13523931A84002A4FB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CACA13423931A84002A4FB5 /* ViewController.swift */; };
 		8CACA13823931A84002A4FB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CACA13623931A84002A4FB5 /* Main.storyboard */; };
@@ -19,6 +22,9 @@
 /* Begin PBXFileReference section */
 		8C731CDF23932EB000585EF6 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "/Users/Bk201/Desktop/ios_developer_path/projects/Instagrid/InstaGrid/InstaGrid/Utils/Delm-Medium.otf"; sourceTree = "<absolute>"; };
 		8C731CE123932EBA00585EF6 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = /Users/Bk201/Desktop/ios_developer_path/projects/Instagrid/InstaGrid/InstaGrid/Utils/ThirstySoftRegular.otf; sourceTree = "<absolute>"; };
+		8C7F5FC82396E5B30012E02E /* GridSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSystem.swift; sourceTree = "<group>"; };
+		8C7F5FCA2396E84E0012E02E /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		8C7F5FCC2396E9500012E02E /* Pictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pictures.swift; sourceTree = "<group>"; };
 		8CACA12F23931A84002A4FB5 /* InstaGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CACA13223931A84002A4FB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CACA13423931A84002A4FB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +75,9 @@
 		8CACA14423931C3B002A4FB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8C7F5FC82396E5B30012E02E /* GridSystem.swift */,
+				8C7F5FCA2396E84E0012E02E /* Grid.swift */,
+				8C7F5FCC2396E9500012E02E /* Pictures.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,8 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C7F5FC92396E5B30012E02E /* GridSystem.swift in Sources */,
+				8C7F5FCD2396E9500012E02E /* Pictures.swift in Sources */,
 				8CACA13523931A84002A4FB5 /* ViewController.swift in Sources */,
 				8CACA13323931A84002A4FB5 /* AppDelegate.swift in Sources */,
+				8C7F5FCB2396E84E0012E02E /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
