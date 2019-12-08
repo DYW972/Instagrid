@@ -550,7 +550,7 @@
                             <constraint firstItem="aB4-Oc-ULF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="FGY-B1-2cb"/>
                             <constraint firstItem="d09-NZ-Wb3" firstAttribute="top" secondItem="Kdc-Ln-CSO" secondAttribute="bottom" constant="8" id="Gzs-vp-iu3"/>
                             <constraint firstItem="Vsg-PW-YzN" firstAttribute="centerX" secondItem="tzM-R0-U9c" secondAttribute="centerX" id="HLM-yc-VNL"/>
-                            <constraint firstItem="aB4-Oc-ULF" firstAttribute="leading" relation="lessThanOrEqual" secondItem="z7n-it-d8f" secondAttribute="trailing" constant="139" id="IZi-K4-9JU"/>
+                            <constraint firstItem="aB4-Oc-ULF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z7n-it-d8f" secondAttribute="trailing" constant="139" id="IZi-K4-9JU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="aB4-Oc-ULF" secondAttribute="trailing" constant="33" id="JbP-XV-0WE"/>
                             <constraint firstItem="Vsg-PW-YzN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L2U-Z7-5sH"/>
                             <constraint firstItem="liX-tA-U1N" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="OhY-Wf-vLv"/>
@@ -653,6 +653,7 @@
                                 <include reference="JbP-XV-0WE"/>
                                 <include reference="cmd-e5-o3D"/>
                                 <include reference="xh2-iC-t2Z"/>
+                                <exclude reference="IZi-K4-9JU"/>
                                 <include reference="cLy-ja-aIR"/>
                             </mask>
                         </variation>
