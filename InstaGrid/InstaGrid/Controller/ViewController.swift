@@ -355,24 +355,3 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         dismiss(animated: true, completion: nil)
     }
 }
-
-// MARK: - UIImage change size extension
-extension UIImage {
-    func changeImageSize(_ width: CGFloat, height: CGFloat, opaque: Bool) -> UIImage {
-        var newImage: UIImage
-        
-        let size = self.size
-        
-        print("Here size:", size)
-        
-        let renderFormat = UIGraphicsImageRendererFormat.default()
-        renderFormat.opaque = opaque
-        let renderer = UIGraphicsImageRenderer(size: CGSize(width: width, height: height), format: renderFormat)
-        newImage = renderer.image {
-            (context) in
-            self.draw(in: CGRect(x: 0, y: 0, width: width, height: height))
-        }
-        print("here new image bounds :", newImage.size)
-        return newImage
-    }
-}
