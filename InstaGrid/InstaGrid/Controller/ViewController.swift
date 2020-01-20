@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var addPictureBtn2: UIButton!
     @IBOutlet weak var addPictureBtn3: UIButton!
     @IBOutlet weak var addPictureBtn4: UIButton!
-    // MARK: landscqpe buttons outlet
+    // MARK: landscape buttons outlet
     @IBOutlet weak var addPictureBtn1L: UIButton!
     @IBOutlet weak var addPictureBtn2L: UIButton!
     @IBOutlet weak var addPictureBtn3L: UIButton!
@@ -41,16 +41,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // MARK: Check device orientation
-        // TODO: Check when it's triggereddevice orientation
+        // MARK: Set up default layout configuration
         setUpDefaultLayoutConfiguration()
+        // MARK: Check device orientation
         checkDeviceOrientation()
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { context in
-            // TODO: Check device orientation
-            // TODO: Check when it's triggereddevice orientation
+            // TODO: Check if this block of code is necessary
             // self.checkDeviceOrientation()
         })
     }
@@ -123,13 +122,13 @@ class ViewController: UIViewController {
     @IBAction func swipeLeftForShare(_ sender: UIPanGestureRecognizer) {
         print("swipeLeftForShare")
         if sender.state == .ended {
-            // Perform action.
+            // MARK: Transform layout into image
             print("gesture finished")
             let renderer = UIGraphicsImageRenderer(size: viewLandscape.bounds.size)
             let image = renderer.image { ctx in
                 viewLandscape.drawHierarchy(in: viewLandscape.bounds, afterScreenUpdates: true)
             }
-            
+            // MARK: Share or save image controller
             let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
             vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
             present(vc, animated: true)
@@ -140,13 +139,13 @@ class ViewController: UIViewController {
     @IBAction func swipeUpForShare(_ sender: UIPanGestureRecognizer) {
         print("swipeUpForShare")
         if sender.state == .ended {
-            // Perform action.
+            // MARK: Transform layout into image
             print("gesture finished")
             let renderer = UIGraphicsImageRenderer(size: viewPortrait.bounds.size)
             let image = renderer.image { ctx in
                 viewPortrait.drawHierarchy(in: viewPortrait.bounds, afterScreenUpdates: true)
             }
-            
+            // MARK: Share or save image controller
             let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
             vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
             present(vc, animated: true)
@@ -156,15 +155,15 @@ class ViewController: UIViewController {
     
     // MARK: - Helper Methods
     
-    // MARK: set up notifications obeserver for device orientation
+    // MARK: Set up notifications obeserver for device orientation
     @objc func checkDeviceOrientation(){
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
         UIDevice.current.endGeneratingDeviceOrientationNotifications()
     }
     
-    // MARK: actions to do when device orientation changed
-    // TODO: improve this block of code
+    // MARK: Actions to do when device orientation changed
+    // TODO: Need to improve this block of code
     @objc func orientationChanged() {
         // FIXME: configure app for all device orientations
         switch UIDevice.current.orientation {
