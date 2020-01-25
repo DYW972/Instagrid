@@ -10,27 +10,26 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    // MARK: Outlets
-    // MARK: landscape buttons outlet
+    // MARK: - Properties
+    
+    // MARK: - Add picture buttons outlets
     @IBOutlet weak var addPictureBtn1: UIButton!
     @IBOutlet weak var addPictureBtn2: UIButton!
     @IBOutlet weak var addPictureBtn3: UIButton!
     @IBOutlet weak var addPictureBtn4: UIButton!
-    // MARK: layout buttons outlet
+    // MARK: Layout buttons outlets
     @IBOutlet weak var layoutBtn1: UIButton!
     @IBOutlet weak var layoutBtn2: UIButton!
     @IBOutlet weak var layoutBtn3: UIButton!
-    // MARK: view orientation outlet
+    // MARK: Layout photo view
     @IBOutlet weak var viewLandscape: UIView!
-    // MARK: view outlet
+    // MARK: App view
     @IBOutlet var mainView: UIView!
     
-    // MARK: Properties
     var button: UIButton?
-    var picture2: UIImage!
-    var picture2isSet: Bool! = false
     
-    
+    // MARK: - Main
+    // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         // MARK: Set up default layout configuration
@@ -40,8 +39,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // MARK: - Actions
-  
-    // MARK: - landscape add picture buttons
+    
+    // MARK: - Add picture buttons
     @IBAction func addPictureBtn1(_ sender: UIButton) {
         self.button = sender
         presentUIImagePicker(sourceType: .photoLibrary)
@@ -62,7 +61,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         presentUIImagePicker(sourceType: .photoLibrary)
     }
     
-    // MARK: - Select layouts buttons
+    // MARK: Select layouts buttons
     @IBAction func layoutBtn1WasPressed(_ sender: UIButton) {
         setUpSelectedLayout(layout: sender)
     }
@@ -75,46 +74,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         setUpSelectedLayout(layout: sender)
     }
     
-    // MARK: - Refresh button
+    // MARK: Refresh button
     @IBAction func refreshBtnWasPressed(_ sender: UIButton) {
         cleanUpLayout()
     }
     
-    // MARK: - Swipe gestures
+    // MARK: Handle swipe gestures
+    // TODO: Look for handle multi-gestures
     @IBAction func swipeLeftForShare(_ sender: UIPanGestureRecognizer) {
         if sender.state == .ended {
-            // MARK: Transform layout into image
-            print("gesture finished")
-            let renderer = UIGraphicsImageRenderer(size: viewLandscape.bounds.size)
-            let image = renderer.image { ctx in
-                viewLandscape.drawHierarchy(in: viewLandscape.bounds, afterScreenUpdates: true)
-            }
-            // MARK: Share or save image controller
-            let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
-            vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-            present(vc, animated: true)
+            prepareImage()
         }
-        
     }
     
     @IBAction func swipeUpForShare(_ sender: UIPanGestureRecognizer) {
         if sender.state == .ended {
-            // MARK: Transform layout into image
-            print("gesture finished")
-            let renderer = UIGraphicsImageRenderer(size: viewLandscape.bounds.size)
-            let image = renderer.image { ctx in
-                viewLandscape.drawHierarchy(in: viewLandscape.bounds, afterScreenUpdates: true)
-            }
-            // MARK: Share or save image controller
-            let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
-            vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
-            present(vc, animated: true)
+            prepareImage()
         }
     }
     
     // MARK: - Helper Methods
-    
-    // MARK: Set up notifications obeserver for device orientation
+    // MARK: - Set up notifications obeserver for device orientation
     @objc func checkDeviceOrientation(){
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
@@ -122,17 +102,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // MARK: Actions to do when device orientation changed
-    // TODO: Need to improve this block of code
     @objc func orientationChanged() {
-        // FIXME: configure app for all device orientations
         switch UIDevice.current.orientation {
         case .landscapeLeft, .landscapeRight:
-            // FIXME: print twice device orientation
             setUpDefaultLayoutConfiguration()
             let swipeLeftForShare = UIPanGestureRecognizer(target: self, action: #selector(self.swipeLeftForShare(_:)))
             self.mainView.addGestureRecognizer(swipeLeftForShare)
-        case .portrait, .portraitUpsideDown:
-            // FIXME: print twice device orientation
+        case .portrait:
             setUpDefaultLayoutConfiguration()
             let swipeUpForShare = UIPanGestureRecognizer(target: self, action: #selector(self.swipeUpForShare(_:)))
             self.mainView.addGestureRecognizer(swipeUpForShare)
@@ -141,30 +117,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
-    // MARK: clean up the layout and properties
+    // MARK: Clean up the layout and properties
     private func cleanUpLayout(){
-        picture2 = nil
-        picture2isSet = false
-        let buttonsArray = [ addPictureBtn1, addPictureBtn2, addPictureBtn3, addPictureBtn4]
-        for button in buttonsArray {
+        for button in [ addPictureBtn1, addPictureBtn2, addPictureBtn3, addPictureBtn4] {
             button!.setImage(UIImage(named: "Plus.png"), for: .normal)
         }
     }
-    
     
     // MARK: Set up default layout configuration
     private func setUpDefaultLayoutConfiguration() {
         layoutBtn1.imageView?.isHidden = false
         layoutBtn2.imageView?.isHidden = true
         layoutBtn3.imageView?.isHidden = true
-        layoutBtn1.imageView?.contentMode = .scaleAspectFit
-        layoutBtn2.imageView?.contentMode = .scaleAspectFit
-        layoutBtn3.imageView?.contentMode = .scaleAspectFit
         addPictureBtn2.isHidden = true
     }
     
     // MARK: Update selected layout methods.
-    // TODO: need to reduce this block of code
     private func setUpSelectedLayout(layout: UIButton){
         layoutBtn1.imageView?.isHidden = layout !== layoutBtn1
         layoutBtn2.imageView?.isHidden = layout !== layoutBtn2
@@ -173,25 +141,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         addPictureBtn2.isHidden = layout == layoutBtn1
         addPictureBtn3.isHidden = false
         addPictureBtn4.isHidden = layout == layoutBtn2
-        switch layout {
-        case layoutBtn2, layoutBtn3:
-            // MARK: check if image 2 is already uploaded
-            if picture2isSet {
-                // MARK: assign uploaded image to button
-                assignImageUploadToButton(button: addPictureBtn2, image: picture2)
-            } else if layout == layoutBtn2 {
-                // MARK: assign image 4 to button
-                addPictureBtn2.setImage(addPictureBtn4.currentImage, for: .normal)
-            } else {
-                // MARK: assign default button image
-                addPictureBtn2.setImage(UIImage(named: "Plus.png"), for: .normal)
-            }
-        default:
-            return
-        }
     }
     
-    // MARK: present UIImage Picker Controller
+    // MARK: Present UIImage Picker Controller
     private func presentUIImagePicker(sourceType: UIImagePickerController.SourceType) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -200,32 +152,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(picker, animated: true, completion: nil)
     }
     
-    // MARK: Sharing final image
-    private func shareImage(image: UIImageView) {
-        let items = [image]
-        let ac = UIActivityViewController(activityItems: items, applicationActivities: [])
-        present(ac, animated: true)
-    }
-    
-    // MARK: assign image uploaded to button image
-    private func assignImageUploadToButton(button: UIButton, image: UIImage) {
-        // MARK: check if image 2 is already uploaded
-        if button.tag == 2 {
-            picture2 = image
-            picture2isSet = true
-        }
-        // MARK: assign uploaded image to button
-        button.setImage(image, for: .normal)
-        button.imageView?.contentMode = .scaleAspectFill
-    }
-    
+    // MARK: Allow user to choose an image and set the layout
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let chosenImage = info[.originalImage] as? UIImage else {
             dismiss(animated: true, completion: nil)
             return
         }
         
-        // MARK: upload image and set layout
         switch button?.tag {
         case 1:
             assignImageUploadToButton(button: addPictureBtn1, image: chosenImage)
@@ -237,12 +170,39 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             assignImageUploadToButton(button: addPictureBtn4, image: chosenImage)
         default:
             print("Error getting button name")
+            return
         }
         
         dismiss(animated: true, completion: nil)
     }
     
+    // MARK: Assign image uploaded to button image
+    private func assignImageUploadToButton(button: UIButton, image: UIImage) {
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
+    }
     
+    // MARK: Prepare image for sharing or saving
+    private func prepareImage() {
+        // MARK: Transform layout into image
+        let renderer = UIGraphicsImageRenderer(size: viewLandscape.bounds.size)
+        let image = renderer.image { ctx in
+            viewLandscape.drawHierarchy(in: viewLandscape.bounds, afterScreenUpdates: true)
+        }
+        // MARK: Share or save image controller
+        let vc = UIActivityViewController(activityItems: [image], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
+    }
+    
+    // MARK: Sharing final image
+    private func shareImage(image: UIImageView) {
+        let items = [image]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: [])
+        present(ac, animated: true)
+    }
+    
+    // MARK: Action when the user canceled call to image picker
     @objc func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }

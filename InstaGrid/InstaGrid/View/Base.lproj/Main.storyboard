@@ -544,8 +544,8 @@
         <image name="Arrow Left" width="10" height="14"/>
         <image name="Arrow Up" width="14" height="10"/>
         <image name="Instagrid" width="124" height="39"/>
-        <image name="Layout 1" width="27" height="27"/>
-        <image name="Layout 2" width="27" height="27"/>
+        <image name="Layout 1" width="80" height="80"/>
+        <image name="Layout 2" width="80" height="80"/>
         <image name="Layout 3" width="80" height="80"/>
         <image name="Plus" width="14" height="14"/>
         <image name="Selected" width="80" height="80"/>
