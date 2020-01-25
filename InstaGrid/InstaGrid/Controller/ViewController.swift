@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: - Properties
-    
     // MARK: - Add picture buttons outlets
     @IBOutlet weak var addPictureBtn1: UIButton!
     @IBOutlet weak var addPictureBtn2: UIButton!
@@ -39,7 +38,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // MARK: - Actions
-    
     // MARK: - Add picture buttons
     @IBAction func addPictureBtn1(_ sender: UIButton) {
         self.button = sender
@@ -94,7 +92,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     // MARK: - Helper Methods
-    // MARK: - Set up notifications obeserver for device orientation
+    // MARK: - Set up notifications observer for device orientation
     @objc func checkDeviceOrientation(){
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
