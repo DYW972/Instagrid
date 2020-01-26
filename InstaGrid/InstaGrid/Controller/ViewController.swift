@@ -130,10 +130,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         layoutBtn1.imageView?.isHidden = false
         layoutBtn2.imageView?.isHidden = true
         layoutBtn3.imageView?.isHidden = true
-        addPictureBtn1.isHidden = false
         addPictureBtn2.isHidden = true
-        addPictureBtn3.isHidden = false
-        addPictureBtn4.isHidden = false
     }
     
     // MARK: Update selected layout methods.
