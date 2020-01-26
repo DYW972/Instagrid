@@ -26,7 +26,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="massimiliano-morosinotto-Tw_VQuS3Xio-unsplash-1" translatesAutoresizingMaskIntoConstraints="NO" id="liX-tA-U1N">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd4-L6-u3W">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd4-L6-u3W">
                                 <rect key="frame" x="114" y="189.5" width="158" height="35"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -50,9 +50,6 @@
                                         <include reference="gcg-ib-quK"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="x4X-Ms-1fg" appends="YES" id="zsS-58-idN"/>
-                                </connections>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="QO4-ub-fgr">
                                 <rect key="frame" x="386" y="4" width="124" height="44"/>
@@ -92,7 +89,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdc-Ln-CSO">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdc-Ln-CSO">
                                 <rect key="frame" x="133" y="244" width="148" height="24"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -101,9 +98,6 @@
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Ovg-PD-8zl" appends="YES" id="iRf-Bh-pBr"/>
-                                </connections>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="Vsg-PW-YzN">
                                 <rect key="frame" x="200" y="222" width="14" height="14"/>
@@ -163,30 +157,6 @@
                                     </mask>
                                 </variation>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r25-Pa-0bG">
-                                <rect key="frame" x="183" y="704" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="r25-Pa-0bG" secondAttribute="height" multiplier="1:1" id="0Eq-lP-f49"/>
-                                    <constraint firstAttribute="width" secondItem="r25-Pa-0bG" secondAttribute="height" multiplier="1:1" id="TNR-Wf-2MT">
-                                        <variation key="heightClass=compact" constant="-3"/>
-                                    </constraint>
-                                </constraints>
-                                <state key="normal" image="refreshBtnGreen"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="TNR-Wf-2MT"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="0Eq-lP-f49"/>
-                                        <include reference="TNR-Wf-2MT"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="refreshBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n3T-ll-Q0q"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7n-it-d8f">
                                 <rect key="frame" x="35" y="276" width="344" height="344"/>
                                 <subviews>
@@ -289,7 +259,32 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r25-Pa-0bG">
+                                <rect key="frame" x="183" y="652" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="r25-Pa-0bG" secondAttribute="height" multiplier="1:1" id="0Eq-lP-f49"/>
+                                    <constraint firstAttribute="width" secondItem="r25-Pa-0bG" secondAttribute="height" multiplier="1:1" id="TNR-Wf-2MT">
+                                        <variation key="heightClass=compact" constant="-3"/>
+                                    </constraint>
+                                </constraints>
+                                <state key="normal" image="refreshBtnGreen"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TNR-Wf-2MT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="0Eq-lP-f49"/>
+                                        <include reference="TNR-Wf-2MT"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="refreshBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n3T-ll-Q0q"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Gd4-L6-u3W" firstAttribute="centerX" secondItem="y2l-mC-Yt2" secondAttribute="centerX" id="2ey-0x-5WW"/>
                             <constraint firstItem="QO4-ub-fgr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4Av-0K-Num"/>
@@ -339,7 +334,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aB4-Oc-ULF" secondAttribute="trailing" constant="16" id="fmi-ci-38Y"/>
                             <constraint firstItem="liX-tA-U1N" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" id="h7K-Cs-s8r"/>
                             <constraint firstItem="aB4-Oc-ULF" firstAttribute="height" secondItem="z7n-it-d8f" secondAttribute="height" id="i87-uE-8AW"/>
-                            <constraint firstItem="aB4-Oc-ULF" firstAttribute="top" secondItem="r25-Pa-0bG" secondAttribute="bottom" constant="8" symbolic="YES" id="l8Y-FK-H7F"/>
+                            <constraint firstItem="aB4-Oc-ULF" firstAttribute="top" secondItem="r25-Pa-0bG" secondAttribute="bottom" constant="8" symbolic="YES" id="l8Y-FK-H7F">
+                                <variation key="heightClass=regular" constant="60"/>
+                            </constraint>
                             <constraint firstItem="aB4-Oc-ULF" firstAttribute="centerY" secondItem="z7n-it-d8f" secondAttribute="centerY" id="lBk-NT-z59"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aB4-Oc-ULF" secondAttribute="bottom" constant="37" id="lfm-lA-4Si"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r25-Pa-0bG" secondAttribute="trailing" constant="82" id="m4N-9v-pX5">
@@ -353,7 +350,9 @@
                             <constraint firstItem="r25-Pa-0bG" firstAttribute="centerX" secondItem="aB4-Oc-ULF" secondAttribute="centerX" id="tnk-ip-WLz"/>
                             <constraint firstItem="tzM-R0-U9c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="4" id="u5N-tr-o0X"/>
                             <constraint firstItem="aB4-Oc-ULF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ud6-a2-Vg1"/>
-                            <constraint firstItem="aB4-Oc-ULF" firstAttribute="top" secondItem="r25-Pa-0bG" secondAttribute="bottom" constant="8" symbolic="YES" id="ueq-oY-aWc"/>
+                            <constraint firstItem="aB4-Oc-ULF" firstAttribute="top" secondItem="r25-Pa-0bG" secondAttribute="bottom" constant="8" symbolic="YES" id="ueq-oY-aWc">
+                                <variation key="heightClass=regular" constant="60"/>
+                            </constraint>
                             <constraint firstItem="aB4-Oc-ULF" firstAttribute="height" secondItem="z7n-it-d8f" secondAttribute="height" id="vAe-SO-Sso"/>
                             <constraint firstItem="aB4-Oc-ULF" firstAttribute="top" secondItem="z7n-it-d8f" secondAttribute="top" id="wOO-bl-MSw"/>
                             <constraint firstItem="aB4-Oc-ULF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wiu-dE-0GJ"/>
@@ -512,6 +511,10 @@
                                 <include reference="l8Y-FK-H7F"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="B9q-Zg-lXl" appends="YES" id="B5y-CE-I29"/>
+                            <outletCollection property="gestureRecognizers" destination="XN7-cQ-5P4" appends="YES" id="knD-xF-bor"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="addPictureBtn1" destination="Obm-bs-khY" id="nW8-ss-nqW"/>
@@ -521,19 +524,19 @@
                         <outlet property="layoutBtn1" destination="y9r-SC-NFF" id="kGg-Fh-fuL"/>
                         <outlet property="layoutBtn2" destination="5ln-m7-NhL" id="5LP-0A-Yaq"/>
                         <outlet property="layoutBtn3" destination="7CX-ki-Yr1" id="bCE-cA-BWr"/>
-                        <outlet property="mainView" destination="8bC-Xf-vdC" id="BTV-FE-eVC"/>
+                        <outlet property="mainView" destination="8bC-Xf-vdC" id="T1H-ck-13O"/>
                         <outlet property="viewLandscape" destination="z7n-it-d8f" id="gU5-h7-F57"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Ovg-PD-8zl">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="B9q-Zg-lXl">
                     <connections>
-                        <action selector="swipeLeftForShare:" destination="BYZ-38-t0r" id="sfv-3A-a8D"/>
+                        <action selector="swipeUpForShare:" destination="BYZ-38-t0r" id="VGd-F5-6Cs"/>
                     </connections>
                 </panGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="x4X-Ms-1fg">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="XN7-cQ-5P4">
                     <connections>
-                        <action selector="swipeUpForShare:" destination="BYZ-38-t0r" id="GI0-WH-hdO"/>
+                        <action selector="swipeLeftForShare:" destination="BYZ-38-t0r" id="6ji-Eg-ncl"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

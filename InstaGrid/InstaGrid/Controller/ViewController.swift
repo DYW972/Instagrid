@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    // MARK: - Properties
+    // MARK: - PROPERTIES
     // MARK: - Add picture buttons outlets
     @IBOutlet weak var addPictureBtn1: UIButton!
     @IBOutlet weak var addPictureBtn2: UIButton!
@@ -24,7 +24,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var viewLandscape: UIView!
     // MARK: App view
     @IBOutlet var mainView: UIView!
-    
+    // MARK: Variables
     var button: UIButton?
     
     // MARK: - Main
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         checkDeviceOrientation()
     }
     
-    // MARK: - Actions
+    // MARK: - ACTIONS
     // MARK: - Add picture buttons
     @IBAction func addPictureBtn1(_ sender: UIButton) {
         self.button = sender
@@ -77,22 +77,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         cleanUpLayout()
     }
     
-    // MARK: Handle swipe gestures
-    // TODO: Look for handle multi-gestures
+    // MARK: Swipe left gesture
     @IBAction func swipeLeftForShare(_ sender: UIPanGestureRecognizer) {
-        if sender.state == .ended {
-            prepareImage()
+        // MARK: Check if gesture speed is in the right direction == left
+        let velocity = sender.velocity(in: mainView)
+        if velocity.x < CGFloat(-500) && sender.state == .ended {
+            layoutIsReadyToShare()
         }
     }
     
+    // MARK: Swipe up gesture
     @IBAction func swipeUpForShare(_ sender: UIPanGestureRecognizer) {
-        if sender.state == .ended {
-            prepareImage()
+        // MARK: Check if gesture speed is in the right direction == up
+        let velocity = sender.velocity(in: mainView)
+        if velocity.y < CGFloat(-500) && sender.state == .ended {
+            layoutIsReadyToShare()
         }
     }
     
-    // MARK: - Helper Methods
-    // MARK: - Set up notifications observer for device orientation
+    // MARK: - HELPER METHODS
+    // MARK: - Set up notification observer for device orientation
     @objc func checkDeviceOrientation(){
         UIDevice.current.beginGeneratingDeviceOrientationNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged), name: UIDevice.orientationDidChangeNotification, object: nil)
@@ -101,24 +105,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: Actions to do when device orientation changed
     @objc func orientationChanged() {
+        setUpDefaultLayoutConfiguration()
         switch UIDevice.current.orientation {
         case .landscapeLeft, .landscapeRight:
-            setUpDefaultLayoutConfiguration()
-            let swipeLeftForShare = UIPanGestureRecognizer(target: self, action: #selector(self.swipeLeftForShare(_:)))
+            let swipeLeftForShare = UIPanGestureRecognizer(target: self, action: #selector(swipeLeftForShare(_:)))
             self.mainView.addGestureRecognizer(swipeLeftForShare)
-        case .portrait:
-            setUpDefaultLayoutConfiguration()
-            let swipeUpForShare = UIPanGestureRecognizer(target: self, action: #selector(self.swipeUpForShare(_:)))
+        case .portrait, .unknown:
+            let swipeUpForShare = UIPanGestureRecognizer(target: self, action: #selector(swipeUpForShare(_:)))
             self.mainView.addGestureRecognizer(swipeUpForShare)
         default:
             return
         }
     }
     
-    // MARK: Clean up the layout and properties
+    // MARK: Clean up the layout
     private func cleanUpLayout(){
-        for button in [ addPictureBtn1, addPictureBtn2, addPictureBtn3, addPictureBtn4] {
-            button!.setImage(UIImage(named: "Plus.png"), for: .normal)
+        [addPictureBtn1, addPictureBtn2, addPictureBtn3, addPictureBtn4].forEach { button in
+            button?.setImage(UIImage(named: "Plus.png"), for: .normal)
         }
     }
     
@@ -127,7 +130,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         layoutBtn1.imageView?.isHidden = false
         layoutBtn2.imageView?.isHidden = true
         layoutBtn3.imageView?.isHidden = true
+        addPictureBtn1.isHidden = false
         addPictureBtn2.isHidden = true
+        addPictureBtn3.isHidden = false
+        addPictureBtn4.isHidden = false
     }
     
     // MARK: Update selected layout methods.
@@ -135,9 +141,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         layoutBtn1.imageView?.isHidden = layout !== layoutBtn1
         layoutBtn2.imageView?.isHidden = layout !== layoutBtn2
         layoutBtn3.imageView?.isHidden = layout !== layoutBtn3
-        addPictureBtn1.isHidden = false
         addPictureBtn2.isHidden = layout == layoutBtn1
-        addPictureBtn3.isHidden = false
         addPictureBtn4.isHidden = layout == layoutBtn2
     }
     
@@ -180,6 +184,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         button.imageView?.contentMode = .scaleAspectFill
     }
     
+    // MARK: Check if users respects conditions
+    private func layoutIsReadyToShare() {
+        // MARK: Conditions for allow user to share final picture montage
+        let buttonsArray = [addPictureBtn1, addPictureBtn2, addPictureBtn3, addPictureBtn4]
+        let layoutHave3Picture = buttonsArray.lastIndex(where: {$0?.currentImage != UIImage(named: "Plus.png")})
+        let layoutIsFull = buttonsArray.allSatisfy({$0?.currentImage != UIImage(named: "Plus.png")})
+        
+        if (layoutHave3Picture == 2 && addPictureBtn4.isHidden == true) || (layoutHave3Picture == 3 && addPictureBtn2.isHidden == true) || layoutIsFull {
+            prepareImage()
+        } else {
+            showAlertIsEmpty()
+        }
+    }
+    
     // MARK: Prepare image for sharing or saving
     private func prepareImage() {
         // MARK: Transform layout into image
@@ -193,15 +211,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(vc, animated: true)
     }
     
-    // MARK: Sharing final image
-    private func shareImage(image: UIImageView) {
-        let items = [image]
-        let ac = UIActivityViewController(activityItems: items, applicationActivities: [])
-        present(ac, animated: true)
-    }
-    
-    // MARK: Action when the user canceled call to image picker
-    @objc func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+    // MARK: Presenting an alert message if the user did not have at least 3 pictures uploaded in the layout
+    private func showAlertIsEmpty(){
+        let alertIsEmpty = UIAlertController(title: "Oups 😕", message: "It looks like you haven't added enough images to start sharing.", preferredStyle: UIAlertController.Style.alert)
+        alertIsEmpty.addAction(UIAlertAction(title: "Ok got it !", style: .default))
+        self.present(alertIsEmpty, animated: true, completion: nil)
     }
 }
