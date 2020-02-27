@@ -371,6 +371,10 @@
                             <mask key="constraints">
                                 <exclude reference="4pc-UW-xGr"/>
                                 <exclude reference="u5N-tr-o0X"/>
+                                <exclude reference="2ey-0x-5WW"/>
+                                <exclude reference="4RF-sg-bmy"/>
+                                <exclude reference="TVq-hP-RcA"/>
+                                <exclude reference="d8t-4v-BN8"/>
                                 <exclude reference="SH9-iY-jrO"/>
                                 <exclude reference="Yxh-2s-VIe"/>
                                 <exclude reference="HLM-yc-VNL"/>
@@ -382,10 +386,6 @@
                                 <exclude reference="m4N-9v-pX5"/>
                                 <exclude reference="nwe-Ow-ZGU"/>
                                 <exclude reference="oNR-U6-WZK"/>
-                                <exclude reference="2ey-0x-5WW"/>
-                                <exclude reference="4RF-sg-bmy"/>
-                                <exclude reference="TVq-hP-RcA"/>
-                                <exclude reference="d8t-4v-BN8"/>
                                 <exclude reference="5oY-Ho-gAF"/>
                                 <exclude reference="JII-10-aLd"/>
                                 <exclude reference="LGg-S8-ggk"/>
@@ -396,8 +396,6 @@
                                 <exclude reference="KUt-Ym-MGj"/>
                                 <exclude reference="dSR-tA-P6A"/>
                                 <exclude reference="tnk-ip-WLz"/>
-                                <exclude reference="4Av-0K-Num"/>
-                                <exclude reference="ZZ4-IC-bd8"/>
                                 <exclude reference="CSD-9g-x6T"/>
                                 <exclude reference="FGY-B1-2cb"/>
                                 <exclude reference="KFc-U3-VkM"/>
@@ -416,6 +414,8 @@
                                 <exclude reference="vAe-SO-Sso"/>
                                 <exclude reference="wOO-bl-MSw"/>
                                 <exclude reference="wiu-dE-0GJ"/>
+                                <exclude reference="4Av-0K-Num"/>
+                                <exclude reference="ZZ4-IC-bd8"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -426,23 +426,21 @@
                                 <include reference="z7n-it-d8f"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="2ey-0x-5WW"/>
+                                <include reference="4RF-sg-bmy"/>
+                                <include reference="TVq-hP-RcA"/>
+                                <include reference="d8t-4v-BN8"/>
                                 <include reference="JbP-XV-0WE"/>
                                 <exclude reference="fmi-ci-38Y"/>
                                 <exclude reference="lfm-lA-4Si"/>
                                 <exclude reference="m4N-9v-pX5"/>
                                 <include reference="oNR-U6-WZK"/>
-                                <include reference="2ey-0x-5WW"/>
-                                <include reference="4RF-sg-bmy"/>
-                                <include reference="TVq-hP-RcA"/>
-                                <include reference="d8t-4v-BN8"/>
                                 <include reference="xh2-iC-t2Z"/>
                                 <exclude reference="6Da-jg-gdz"/>
                                 <exclude reference="Fhp-MR-YNq"/>
                                 <exclude reference="KUt-Ym-MGj"/>
                                 <include reference="dSR-tA-P6A"/>
                                 <exclude reference="e3V-yI-g4K"/>
-                                <include reference="4Av-0K-Num"/>
-                                <include reference="ZZ4-IC-bd8"/>
                                 <exclude reference="CSD-9g-x6T"/>
                                 <include reference="KFc-U3-VkM"/>
                                 <include reference="KQh-Vv-ZQx"/>
@@ -455,6 +453,8 @@
                                 <exclude reference="tVB-eN-S4b"/>
                                 <exclude reference="ueq-oY-aWc"/>
                                 <exclude reference="wOO-bl-MSw"/>
+                                <include reference="4Av-0K-Num"/>
+                                <include reference="ZZ4-IC-bd8"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
